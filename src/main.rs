@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 pub fn strtok<'a, 'b>(s: &'a mut &'b str, delimiter: char) -> &'b str {
     if let Some(i) = s.find(delimiter) {
         let prefix = &s[..i];

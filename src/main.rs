@@ -26,10 +26,18 @@ pub fn it_works() {
     let temp = &*nums;
     print_type_of(&temp);
 
-    let _aaa:[i32;5] = [1,2,3,4,5];
+    let _aaa: [i32; 5] = [1, 2, 3, 4, 5];
     // let _bbb:[String;5] = ['a', 'b', 'c', 'd', 'e'];
-    let _ccc = [1;5];
+    let _ccc = [1; 5];
     let _ddd = ['a', 'b', 'c', 'd', 'e'];
 }
 
-pub fn main() { it_works(); }
+fn rustc_env() {
+    let rustc_env: String = std::env::var("cENV").unwrap_or("0".into());
+    println!("rustc_env: {rustc_env}");
+}
+
+pub fn main() {
+    it_works();
+    rustc_env();
+}
